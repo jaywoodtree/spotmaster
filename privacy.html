@@ -49,6 +49,30 @@
             color: #fff;
             text-decoration: none;
         }
+
+        .button-container {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button-agree {
+            background-color: green;
+        }
+        .button-quit {
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
@@ -168,10 +192,26 @@
         <p>If you have any questions about this Privacy Policy, You can contact us:</p>
         <ul><li>By email: jaywoodtree17@gmail.com</li></ul>
 
+    <div class="button-container">
+        <button class="button-agree" onclick="androidAgree()">Agree</button>
+        <button class="button-quit" onclick="androidQuit()">Quit</button>
+    </div>
+    <script type="text/javascript">
+        function androidAgree() {
+            if (typeof Android !== 'undefined' && Android.agree) {
+                Android.agree();
+            }
+        }
 
+        function androidQuit() {
+            if (typeof Android !== 'undefined' && Android.quit) {
+                Android.quit();
+            }
+        }
+    </script>
 
-
-
+</body>
+</html>
 
 
 
